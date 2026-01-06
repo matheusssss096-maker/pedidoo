@@ -1,39 +1,86 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Pedido de Namoro</title>
+  <meta charset="UTF-8" />
+  <title>Pedido de Namoro ❤️</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       text-align: center;
-      margin-top: 80px;
+      background: linear-gradient(to bottom, #ffe0e6, #ffd1dc);
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
 
-    #nao {
-      position: absolute;
+    h1 {
+      font-size: 42px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .heart {
+      color: #ff4d7e;
+      font-size: 70px;
+      animation: pulse 1.3s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.25); }
+      100% { transform: scale(1); }
     }
 
     button {
-      padding: 10px 18px;
-      font-size: 18px;
+      padding: 14px 28px;
+      font-size: 22px;
+      border: none;
+      border-radius: 8px;
       cursor: pointer;
+      margin: 12px;
+      font-weight: bold;
+    }
+
+    #sim {
+      background: #ff5c8d;
+      color: white;
+    }
+
+    #nao {
+      background: #ff85a1;
+      color: white;
+      position: absolute;
     }
   </style>
 </head>
+
 <body>
 
+  <div class="heart">💗</div>
   <h1>Quer namorar comigo?</h1>
 
-  <button id="sim" onclick="alert('Aeeee! ❤️')">Aceito</button>
+  <button id="sim" onclick="alert('Sabia que você ia dizer sim ❤️')">Aceito</button>
   <button id="nao">Não</button>
+
+  <!-- Música de fundo -->
+  <iframe 
+    width="0" 
+    height="0" 
+    src="https://www.youtube.com/embed/qdfHkAfalZY?autoplay=1&loop=1&playlist=qdfHkAfalZY"
+    frameborder="0"
+    allow="autoplay">
+  </iframe>
 
   <script>
     const botaoNao = document.getElementById("nao");
 
     botaoNao.addEventListener("mouseover", () => {
-      const x = Math.random() * window.innerWidth * 0.8;
-      const y = Math.random() * window.innerHeight * 0.8;
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 100);
       botaoNao.style.left = x + "px";
       botaoNao.style.top = y + "px";
     });
